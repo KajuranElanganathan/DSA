@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class main2{
@@ -9,14 +10,15 @@ public class main2{
         list.addLast(10);
         list.addLast(20);
         list.addLast(30);
-        int size = list.size();
+        list.reverse();
+
+        var array = list.arr();
+
+        System.out.println(Arrays.toString(array));
 
     }
 
 }
-
-
-
 
 
 class LinkedList{
@@ -248,18 +250,26 @@ class LinkedList{
     public void reverse(){
 
 
-        var current = first;
+        //need a previous and current and next, [10(p) <- 20(c) -> 30(n)]
+
+        var previous = first; //marks the first node as previous
+        var current = first.next; //marks the 2nd to first node as current
+
+        
+
+        while(current!=null){ //as long as the current node isnt nulls which is when [10<-20<-30(p)] c , after all the arrows get reversed.
 
 
-        while(current!= null){
+            var next = current.next; //set the 3rd node to next, to allow us to hold a reference when we switch the arrow
+            current.next = previous; //sets the 2nd node link to first
+            previous = current; //shift the previous to next node
+            current = next; //shift current to next node
 
-
-            
         }
 
-
-
-
+        last = first; // last point is set to the first pointer
+        last.next = null; // the pointer that was still technically still here, is set to null, when [10->20] becomes [10 <- 20] the inital arrow is gone
+        first = previous; //first pointer set to the new first node
 
 
 
