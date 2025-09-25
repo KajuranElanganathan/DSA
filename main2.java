@@ -289,7 +289,7 @@ class LinkedList{
         for (int i = 0; i< k-1; i++){
             b = b.next;// The two pointers, (a which is the value we want and b is the last node are always k-1 apart, so we first want to move the b point k-1 nodes ahead)
             if (b == null){
-                throw new IllegalArgumentException;
+                throw new IllegalArgumentException();
             }
         }
         while(b!=last){ //then as long as b isnt at the last node yet, we cant to bring both nodes one up, until b reaches the end, which means a will point to the kth node;
