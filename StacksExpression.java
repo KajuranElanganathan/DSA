@@ -33,6 +33,7 @@ class stackproblem{
             }
 
             if (ch == '('){
+                if(stack.isEmpty())return false;
                 stack.pop();
             }
 
