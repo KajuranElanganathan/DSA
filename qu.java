@@ -2,7 +2,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Stack;
 
-public class qu{
+public class qu{//popular interview question, reversing a queue.
     public static void main(String[] args) {
         
 

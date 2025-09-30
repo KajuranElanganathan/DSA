@@ -13,10 +13,7 @@ public class StacksExpression{
         System.out.println(hello);
 
 
-        
-
-
-
+    
 }
 
 class stackproblem{
@@ -32,7 +29,7 @@ class stackproblem{
 
             }
 
-            if (ch == '('){
+            if (ch == ')'){
                 if(stack.isEmpty())return false;
                 stack.pop();
             }
